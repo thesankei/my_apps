@@ -1,0 +1,8 @@
+<div class="row">
+	<h3 class="subheader">TagCloud</h3>
+	<div id="tag_cloud">
+	  <% tag_cloud Blogpost.tag_counts, %w[tag1 tag2 tag3 tag4 tag5 tag6 tag7 tag8] do |tag, css_class| %>
+	    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+	  <% end %>
+	</div>
+</div>

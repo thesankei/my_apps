@@ -1,0 +1,75 @@
+<% provide(:title,@place.name)%>
+<div class="row">	
+  <div class="large-2 columns">
+  	<div class="subheader">
+  		<% session[:current_place] = @place.id %>
+  		<%= link_to 'Create New Sellable', new_sellable_path %>
+  	</div>
+  	
+  	<div class="subheader">
+  		<%= link_to 'View Sellables', sellables_path %>
+  	</div>
+  </div>
+  
+  <div class="large-8 columns">
+	<p id="notice"><%= notice %></p>
+	<h2 class="subheader">
+	  <%= @place.name %>
+	</h2>
+	<div class="row">
+		<div class=" small-8 columns">
+			<%= render 'layouts/general/slideshow' %>	
+		</div>
+		<div class="small-4 columns">
+			<p>
+			  <h6 class="subheader">About Us:</h6>
+			  <br />
+			  <%= @place.description %>
+			</p>
+			<p>
+			  <h6 class="subheader">Location:</h6>
+			  <%= @place.location %>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<h3 class="subheader">Customer Reviews.</h3>
+		<ul class="reviews">
+			<% @place.reviews.each do |review| %>
+			  <li class="microposts">
+			  	<p class="subheader">
+			  		<strong>Reviewer: </strong>
+			  		 <%= review.reviewer %>
+			  	</p>
+			    <p class="quote">
+			    	 <%= review.content %>
+			    </p>
+			    
+			    <span class="timestamp">
+					Posted <%= time_ago_in_words(review.created_at) %> ago.
+				</span>
+				<p>
+				  <%= link_to 'Delete Review', [review.place, review],
+				               method: :delete,
+				               data: { confirm: 'Are you sure?' } %>
+				</p>
+			  </li>
+			<% end %>
+		</ul>
+		
+		<h5 class="subheader">Add a Review:</h5>
+		<%= render "reviews/form" %>
+	</div>
+	
+
+	
+	<%= link_to 'Edit', edit_place_path(@place) %> |
+	<%= link_to 'Back', places_path %>
+	
+
+  </div>
+  
+  <div class="large-2 columns">
+  	<p></p>
+  </div>
+</div>

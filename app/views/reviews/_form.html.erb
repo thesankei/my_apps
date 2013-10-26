@@ -1,0 +1,9 @@
+<%= form_for([@place, @place.reviews.build]) do |f| %>
+	
+  <p>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

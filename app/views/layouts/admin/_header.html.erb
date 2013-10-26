@@ -1,0 +1,120 @@
+<header>
+      <nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><%= link_to "Njooh", root_path %></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+     
+      <% if user_signed_in? %>
+      	
+		<li class="active">
+      		<%= link_to "Admin NjooBuzz", '#' %>
+      	</li> 
+      	     
+      	<li class="divider"></li>
+      	
+      	<li >
+      		<%= link_to "Admin Blogs", '#' %>
+      	</li>
+      	
+      	<li class="divider"></li>
+      	
+      	<li >
+      		<%= link_to "Admin Music", '#' %>
+      	</li>
+      	
+      	<li class="divider"></li>
+      	
+      	<li >
+      		<%= link_to "Admin Places", '#' %>
+      	</li>
+      	
+      	<li class="divider"></li>
+      	
+      	<li >
+      		<%= link_to "Admin nMaps", '#' %>
+      	</li>
+      	
+      	<li class="divider"></li>
+      	
+      	<li class="has-dropdown"><a href="#">Admin Account</a>
+
+        <ul class="dropdown">
+        	
+          <li>
+    		<%= link_to('Edit My Account', edit_user_registration_path) %>
+    	  </li>
+    	  
+          <li class="divider"></li>
+          
+          <li>
+    		<%= link_to('Create New Admin',  new_admin_user_path) %>
+    	  </li>
+    	  
+          <li class="divider"></li>
+          <li>
+    		<%= link_to('Manage Users', admin_users_path) %>
+    	  </li>
+    	  
+          <li class="divider"></li>
+          
+		  <li>
+    		<%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+    	  </li>
+    	  
+    	  <li class="divider"></li>
+    	  
+        </ul>
+      </li>
+      	
+      	
+    	
+  	 <% else %>
+  	 	
+    	<li class="active">
+    		<%= link_to('Login', new_user_session_path)  %>
+    	</li>
+    	
+    	<li class="divider"></li>
+    	<li>
+    		<%= link_to('Sign up', new_user_registration_path)  %>
+    	</li>
+  	<% end %>
+      
+      <li class="divider"></li>
+     
+    </ul>
+
+	<% if user_signed_in? %>
+	    <!-- Right Nav Section -->
+	    <ul class="right">
+	      <li class="divider hide-for-small"></li>
+	  
+	      <li class="has-form">
+	        <form>
+	          <div class="row collapse">
+	            <div class="small-8 columns">
+	              <input type="text" placeholder="Search Njooh">
+	            </div>
+	            <div class="small-4 columns">
+	              <a href="#" class="button">Admin Search</a>
+	            </div>
+	          </div>
+	        </form>
+	      </li>
+	      <li class="divider show-for-small"></li>
+	      
+	    </ul>
+    <% end %>    
+  </section>
+</nav>
+</header>

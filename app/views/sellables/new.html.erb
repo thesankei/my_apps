@@ -1,0 +1,18 @@
+<% provide(:title,'Add A Prodct')%>
+<div class="row">	
+  <div class="large-1 columns">
+  	<p></p>
+  </div>
+  
+  <div class="large-10 columns">
+		<h2 class=" subheader">Add a Product!</h2>
+		
+		<%= form_for @sellable, :html => { :class => :form } do |f| -%>
+		  <%= render :partial => "form", :locals => {:f => f} %>
+		<% end %>
+  </div>
+  
+  <div class="large-1 columns">
+  	<p></p>
+  </div>
+</div>

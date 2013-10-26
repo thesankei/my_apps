@@ -1,0 +1,19 @@
+<%= provide(:title, 'All users') %>
+<div class="row">
+	<div class="large-2 columns">
+		<p>#User</p>
+	</div>
+	
+	<div class="large-8 columns">
+		<h1 class="subheader">All users</h1>
+		<%= will_paginate %>
+		<ul class="large-block-grid-2">
+			<%= render @users %>	
+		</ul>
+		<%= will_paginate %>
+	</div>
+	
+	<div class="large-2 columns">
+		<p></p>
+	</div>
+</div>

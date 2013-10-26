@@ -1,0 +1,43 @@
+<% provide(:title,'Products')%>
+<div class="row">
+	<div class="large-2 columns">
+		<p></p>
+	</div>
+	<div class="large-9 columns">
+		<h1 class="subheader">All Products And Services</h1>
+		
+		<ul class="thumbnails">
+		<% @sellables.each do |sellable| %>
+
+			  <li class="small-3">
+			    <div class="thumbnail">
+			      <h3>
+			      	<%= sellable.name %>
+			      </h3>
+			      <%= link_to image_tag('demo1.jpg'), sellable %>
+				  
+				  <h6>
+				  	Available at <%= sellable.place.name %>
+				  </h6>
+			      <p>
+			      	<%= sellable.data %>
+			      </p>
+			      
+			      <span class="timestamp">
+					Created <%= time_ago_in_words(sellable.created_at) %> ago.
+				</span>
+				
+			    <%= link_to 'Edit', edit_sellable_path(sellable) %>
+    			<%= link_to 'Destroy', sellable, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+			      
+			    </div>
+			  </li>
+		<% end %>
+	</ul>
+
+	</div>
+	<div class="large-1 columns">
+		<p></p>
+	</div>
+</div>

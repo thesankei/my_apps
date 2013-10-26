@@ -1,0 +1,34 @@
+<% if user_signed_in? %>
+	<div class="row">
+		
+	  <div class="large-3 columns">
+	  	<section>
+			<%= render 'shared/user_info' %>
+		</section>
+		<p></p>
+		<section>
+			<%= render 'shared/stats' %>
+		</section>
+		<p></p>
+		<section>
+			<%= render 'shared/micropost_form' %>
+		</section>
+	  </div>
+	  
+	  <div class="large-8 columns">
+	 	<h3 class="subheader">NjoohBuzz</h3>
+	 	<% if user_signed_in? %>
+			<%= render 'layouts/general/messages' %>
+		<% end %>
+		
+		<%= render 'shared/feed' %>
+	  </div>
+	  
+	  <div class="large-1 columns">
+	  	<p></p>
+	  </div>
+	  
+	</div>
+<% else%>
+	<p>You need to be signed in!!</p>
+<% end%>

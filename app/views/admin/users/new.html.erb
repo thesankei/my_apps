@@ -1,0 +1,18 @@
+<% provide(:title,'Admin: New User')%>
+<div class="row">
+	  
+  <div class="large-2 columns">
+  	<p>#Space a</p>
+  </div>	
+  
+  <div class="large-8 columns">
+	<h1 class="subheader">Admin Create New User</h1>
+	<%= form_for [:admin, @user], :url => admin_users_path, :html => { :class => :form } do |f| -%>
+	  <%= render :partial => "form", :locals => {:f => f} %>
+	<% end -%>
+	
+	</div>
+	<div class="large-2 columns">
+		<p>#Space b</p>
+  	</div>
+</div>

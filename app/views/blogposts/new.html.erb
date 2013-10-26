@@ -1,0 +1,16 @@
+<% provide(:title,'New Blogpost')%>
+<div class="row">
+	<div class="large-2 columns">
+		<%= render 'tagcloud' %>
+	</div>
+	<div class="large-8 columns">
+		<h1 class="subheader">Create New blogpost</h1>
+
+		<%= render 'form' %>
+		
+		<%= link_to 'Back', blogfeed_path %>
+	</div>
+	<div class="large-2 columns">
+		
+	</div>
+</div>

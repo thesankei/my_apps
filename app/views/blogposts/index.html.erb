@@ -1,0 +1,35 @@
+<% provide(:title,'Blogposts')%>
+<div class="row">
+	<div class="large-2 columns">
+		<%= render 'tagcloud' %>
+	</div>
+	<div class="large-8 columns">
+		<h1 class="subheader">Listing blogposts</h1>
+
+		<ul class="no-bullet">
+			<% @blogposts.each do |blogpost| %>
+			  <li class="<%= cycle('list_line_odd' , 'list_line_even' ) %>">
+			    <h3 class="subheader"><%= blogpost.title %></h3>
+			    <p>
+			    	<%= truncate(strip_tags(blogpost.content),:length => 300) %>
+			    	<%= link_to 'Read More', blogpost %>
+			    </p>
+			    
+			    <span class="timestamp">
+					Posted <%= time_ago_in_words(blogpost.created_at) %> ago.
+				</span>
+				
+			    <%= link_to 'Edit', edit_blogpost_path(blogpost) %>
+			    <%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %>
+			  </li>
+			<% end %>
+		</ul>
+		
+		<br />
+		
+		<%= link_to 'New Blogpost', new_blogpost_path %>
+	</div>
+	<div class="large-2 columns">
+		<p></p>
+	</div>
+</div>

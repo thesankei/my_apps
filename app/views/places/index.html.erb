@@ -1,0 +1,44 @@
+<% provide(:title,'Places')%>
+<div class="row">
+	<div class="large-2 columns">
+		<%= link_to 'Create Place', new_place_path, :class =>'custom_btn' %>
+	</div>
+	<div class="large-8 columns">
+		<h1 class="subheader">Njooh Places</h1>
+		
+		<ul class="thumbnails">
+		<% @places.each do |place| %>
+
+			  <li class="span3">
+			    <div class="thumbnail">
+			      <h3>
+			      	<%= place.name %>
+			      </h3>
+			      <%= link_to image_tag('demo1.jpg'), place %>
+
+			      <p>
+			      	<%= truncate(strip_tags(place.description),:length => 300) %>
+			    	<%= link_to 'More Details', place %>
+			      </p>
+			      
+			      <span class="timestamp">
+					Created <%= time_ago_in_words(place.created_at) %> ago.
+				</span>
+				
+			    <%= link_to 'Edit', edit_place_path(place) %>
+			    <%= link_to 'Delete Place', place, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+			      
+			    </div>
+			  </li>
+		<% end %>
+	</ul>
+		
+		<br />
+		
+		<%= link_to 'Create New Place', new_place_path %>
+	</div>
+	<div class="large-2 columns">
+		<p></p>
+	</div>
+</div>

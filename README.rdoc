@@ -1,0 +1,14 @@
+The Njooh Platform.
+The initial Njooh Pltform on Ruby on rails/Javascript created by:
+Gideon Kitili and Billy Sankei, the founders of www.njooh.com.
+
+The initial Njooh template was created on a template and finally this was the first coded prototype that went live in July 2013, a few months after the two founnders started learning Ruby on Rails.
+
+READ ME:
+AUTHORS:
+THANKS:
+ChangeLog:
+NEWS:
+INSTALL:
+COPYING/LICENSING: @njooh Systems Ltd.
+BUGS:

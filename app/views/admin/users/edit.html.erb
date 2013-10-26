@@ -1,0 +1,20 @@
+<% provide(:title,'Admin: Edit User')%>
+<div class="row">
+	  
+  <div class="large-2 columns">
+  	<p>#Space a</p>
+  </div>	
+  
+  <div class="large-8 columns">
+  	<h1 class="subheader">Admin Edit User</h1>
+  	
+	<%= form_for [:admin, @user], :url => admin_user_path(@user), :html => { :class => "form-horizontal", :id => "edit_user" } do |f| -%>
+	  <input name="_method" type="hidden" value="put" />
+	  <%= render :partial => "form", :locals => {:f => f} %>
+	<% end -%>
+	
+	</div>
+	<div class="large-2 columns">
+		<p>#Space b</p>
+  	</div>
+</div>

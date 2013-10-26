@@ -1,0 +1,34 @@
+<% provide(:title,@blogpost.title)%>
+<div class="row">
+	<div class="large-2 columns">
+		<%= render 'tagcloud' %>
+	</div>
+	<div class="large-8 columns">
+		<% if user_signed_in? %>
+			<%= render 'layouts/general/messages' %>
+		<% end %>
+
+		<p>
+		  <b>Title:</b>
+		  <%= @blogpost.title %>
+		</p>
+		
+		<p>
+		  <b>Content:</b><br />
+		  <%= @blogpost.content %>
+		</p>
+		
+		<h6 class="subheader">Comments</h6>
+		<%= render @blogpost.comments %>
+		
+		<h6 class="subheader">Add a comment:</h6>
+		<%= render "comments/form" %>
+		
+		
+		<%= link_to 'Edit', edit_blogpost_path(@blogpost) %> |
+		<%= link_to 'Back', blogfeed_path %>
+	</div>
+	<div class="large-2 columns">
+		
+	</div>
+</div>

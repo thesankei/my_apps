@@ -1,0 +1,99 @@
+/*
+ * My application Custom styles.
+ */
+
+/* mixins, variables, etc. */
+$grayMediumLight: #eaeaea;
+$grayDarker: #222;
+$grayLight: #888888;
+
+/* microposts */
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+
+.content {
+  display: block;
+}
+
+.timestamp {
+  color: $grayLight;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
+
+/*
+ * Blogposts Styles
+ */
+.blogposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+
+#tag_cloud {
+  //width: 400px;
+  //line-height: 1.6em;
+  .tag1 { font-size: 0.8em; }
+  .tag2 { font-size: 1.0em; }
+  .tag3 { font-size: 1.2em; }
+  .tag4 { font-size: 1.6em; }
+  .tag5 { font-size: 1.8em; }
+  .tag6 { font-size: 2.0em; }
+  .tag7 { font-size: 2.5em; }
+  .tag8 { font-size: 3.0em; }
+}
+
+/*
+ * Reviews Styles
+ */
+.reviews {
+  list-style: none;
+  margin: 10px 0 0 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+
+.quote{
+  font-style:italic;
+  //font-weight:bold;
+  //font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+}
+
+.custom_btn {
+  padding:5px;
+  background-color: #dcdcdc;
+  border: 1px solid #666;
+  color:#9400D3;
+  text-decoration:none;
+}
+
+#copyright {
+  background: #3f3f3f;
+  color: #fff;
+  padding: 11px 0;
+  margin-top: 30px;
+  bottom: 0px;
+}
+

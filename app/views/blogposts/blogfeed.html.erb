@@ -1,0 +1,45 @@
+<% provide(:title,'Blogfeed')%>
+<div class="row">
+	<div class="large-2 columns">
+		<%= render 'tagcloud' %>
+	</div>
+	<div class="large-8 columns">
+		<% if user_signed_in? %>
+			<%= render 'layouts/general/messages' %>
+		<% end %>
+		<h1 class="subheader">Blogfeed</h1>
+		
+		<%= link_to 'Create New Blogpost', new_blogpost_path, :class =>'custom_btn' %>
+		
+		<p></p>
+		
+		<ol class="blogposts">
+			<% @blogposts.each do |blogpost| %>
+			  <li class="microposts">
+			    <h3 class="subheader"><%= blogpost.title %></h3>
+			    <p>
+			    	<%= truncate(strip_tags(blogpost.content),:length => 300) %>
+			    	<%= link_to 'Read More', blogpost %>
+			    </p>
+			    <p>
+					Tags: <%= raw blogpost.tag_list.map{ |t| link_to t, tag_path(t) }.join(', ') %>
+				</p>
+				
+			    <span class="timestamp">
+					Posted <%= time_ago_in_words(blogpost.created_at) %> ago.
+				</span>
+				
+			    <% if current_user?(blogpost.user) %>
+			    	<%= link_to 'Edit', edit_blogpost_path(blogpost) %>
+			    	<%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %>
+			    <% end %>
+			  </li>
+			<% end %>
+		</ol>
+		<%= will_paginate @blogposts %>
+		
+	</div>
+	<div class="large-2 columns">
+		<p></p>
+	</div>
+</div>

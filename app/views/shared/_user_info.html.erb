@@ -1,0 +1,19 @@
+<div class="row">
+	<a href="<%= user_path(current_user) %>">
+		<%= gravatar_for current_user%>
+	</a>
+	
+	<h6 class="subheader">
+		<%= current_user.name %>
+	</h6>
+</div>
+<div class="row">
+	<span>
+		<%= link_to "View My Profile", current_user %>
+	</span>
+</div>
+<div class="row">
+	<span>
+		<%= pluralize(current_user.microposts.count, "Micropost") %>
+	</span>
+</div>
