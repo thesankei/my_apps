@@ -5,5 +5,6 @@ FactoryGirl.define do
     title "MyString"
     tags "MyString"
     content "MyText"
+    image "ImageFile"
   end
 end

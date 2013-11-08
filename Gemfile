@@ -43,3 +43,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+# adding the capistrano Gem
+gem 'capistrano', '~> 3.0.1'
