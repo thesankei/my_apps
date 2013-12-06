@@ -12,3 +12,4 @@ NEWS:
 INSTALL:
 COPYING/LICENSING: @njooh Systems Ltd.
 BUGS:
+https://www.codeship.io/projects/36004990-40c2-0131-177a-7a95864a21a3/status
