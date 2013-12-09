@@ -14,11 +14,11 @@ MyApps::Application.routes.draw do
   get "home/index"
   get 'tags/:tag', to: 'blogposts#blogfeed', as: :tag
   
-  match '/about',to: 'home#about'
-  match '/careers',to: 'home#careers'
-  match '/developer',to: 'home#developer'
-  match '/contact',to: 'home#contact'
-  match '/blogfeed',to: 'blogposts#blogfeed'
+  get '/about',to: 'home#about'
+  get '/careers',to: 'home#careers'
+  get '/developer',to: 'home#developer'
+  get '/contact',to: 'home#contact'
+  get '/blogfeed',to: 'blogposts#blogfeed'
   
   authenticated :user do
     root :to => 'home#index'

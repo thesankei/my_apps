@@ -1,6 +1,6 @@
 # Use this file to configure alternate versions of your application. Be sure to
 # restart your server whenever you make changes.
-Ress.configure do |config|
+# config.Ress do 
 
 
   # == Canonical Subdomain
@@ -8,13 +8,13 @@ Ress.configure do |config|
   # If the canonical version of your application is served under a subdomain
   # you must set it here:
   #
-  # config.set_canonical :subdomain => "subdomain"
+  #config.set_canonical :subdomain => "subdomain"
   #
   # By default, alternate version subdomains are prepended to the canonical url.
   # If you are using a canonical subdomain and you would like it to be replaced
   # by the alternate subdomains, set this option to true:
   #
-  # config.replace_canonical_subdomain = false
+  #config.replace_canonical_subdomain = false
 
 
   # == Modernizr
@@ -28,7 +28,7 @@ Ress.configure do |config|
   #
   # http://modernizr.com/download/#-touch-mq-teststyles-prefixes
   #
-  # config.include_modernizr = false
+   #config.include_modernizr = false
 
 
   # == Adding Alternate Site Versions
@@ -43,10 +43,10 @@ Ress.configure do |config|
   # precedence over those in "app/views" and add `mobile_request?` controller /
   # helper method to your application.
   #
-  # config.add_alternate({
-  #  :name  => 'mobile',
-  #  :media => 'only screen and (max-width: 640px)'
-  # })
+  #config.add_alternate({
+   #:name  => 'mobile',
+    #:media => 'only screen and (max-width: 640px)'
+   #})
   #
   # You can configure the subdomain of a version by passing the ":subdomain"
   # option to "add_alternate". For example, the below will serve the mobile
@@ -55,19 +55,19 @@ Ress.configure do |config|
   # view_paths
   #
   # config.add_alternate({
-  #  :name      => 'mobile',
-  #  :media     => 'only screen and (max-width: 640px)',
-  #  :subdomain => 'm'
+    #:name      => 'mobile',
+    #:media     => 'only screen and (max-width: 640px)',
+   #:subdomain => 'm'
   # })
   #
   # By default the view_path added for a version is generated from the version
   # name "app/#{name}_views". You may change this path by passing the
   # ":view_path" option, eg:
   #
-  # config.add_alternate({
-  #  :name      => 'mobile',
-  #  :media     => 'only screen and (max-width: 640px)',
-  #  :view_path => Rails.root.join('lib', 'mobile_views')
+   #config.add_alternate({
+    #:name      => 'mobile',
+   # :media     => 'only screen and (max-width: 640px)',
+   # :view_path => Rails.root.join('lib', 'mobile_views')
   # })
 
-end
+#end

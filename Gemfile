@@ -21,6 +21,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+#adding the 'protected_attrcibutes'  for protetion
+#gem 'protected_attributes'
+
+
 #include "rails_12factor" to enable all platform features
 gem 'rails_12factor'
 
