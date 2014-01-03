@@ -31,6 +31,12 @@ gem 'jquery-rails'
 #include "rails_12factor" to enable all platform features
 gem 'rails_12factor'
 
+#as part of the Omniauth I am hereby adding the facebook omniauth gemfile to the app so that people can sign up using Facebook
+gem 'omniauth-facebook'
+
+# just as the Facebook one above, I am hereby adding the Twitter Oniauth to the app so people can login using their twitter accounts on our app
+gem 'omniauth-twitter'
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
